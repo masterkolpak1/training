@@ -1,0 +1,24 @@
+Эта начальная версия программы, предназначенной для организаторов и участников IT-конференции.
+С главного окна пользователь может перейти к авторизации.
+В окне авторизации в качестве учетных данных необходимо использовать login и password из таблицы users, описанной ниже. При вводе корректных данных пользователь должен перейти в «Окно организатора», «Окно участника», «Окно модератора», «Окно жюри».
+
+
+
+Используемая в программе база данных:
+CREATE DATABASE demekz;
+
+USE demekz;
+
+CREATE TABLE users (
+login VARCHAR(128),
+password VARCHAR(128),
+post VARCHAR(128)) ENGINE InnoDB;
+
+ALTER TABLE users ADD id INT UNSIGNED NOT NULL AUTO_INCREMENT KEY;
+
+INSERT INTO users(login, password, post)
+VALUES('Org','orgpas','organizer');
+INSERT INTO users(login, password, post) VALUES
+('Par','parpas','participant'),
+('Moder','modpas','moderator'),
+('Jury','jurpas','jury');
